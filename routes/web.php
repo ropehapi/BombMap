@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','App\Http\Controllers\BombController@create')->name('create');
+Route::get('/index/{name}','App\Http\Controllers\BombController@index')->name('index');
+Route::post('/store','App\Http\Controllers\BombController@store')->name('store');
+Route::post('/update/{name}','App\Http\Controllers\BombController@update')->name('update');
